@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkillLink — Home</title>
+  <meta name="description" content="SkillLink: Find verified blue‑collar jobs—construction, welding, driving, electrical, plumbing, housekeeping, and more." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="topbar">
+    <a href="index.html" class="brand" aria-label="SkillLink home">
+      <div class="brand-badge">
+        <img src="SkillLink Logo.png" alt="SkillLink Logo" class="logo-img" />
+      </div>
+      <div class="brand-text">SkillLink</div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="jobs.html">Find Jobs</a>
+      <a href="employers.html">For Employers</a>
+      <a href="about.html">About</a>
+      <button class="btn" data-open-auth="login" type="button">Log In</button>
+      <button class="btn primary" data-open-auth="register" type="button">Register</button>
+      <a class="btn brand" href="employers.html#post">Post a Job</a>
+    </nav>
+  </div>
+  <div class="hero">
+    <div class="hero-wrap">
+      <h1>Find Skilled Work. Get Hired Fast.</h1>
+      <p>Search verified openings for welders, electricians, drivers, masons, mechanics, cleaners, and more.</p>
+      <form class="searchbox" action="jobs.html" method="get">
+        <input type="text" name="q" placeholder="Job title or skill (e.g., Welder, Driver, Electrician)" />
+        <input type="text" name="loc" placeholder="Location (e.g., Caloocan, Cebu, Davao)" />
+        <select name="cat">
+          <option value="">All Categories</option>
+          <option>Construction</option><option>Electrical</option><option>Welding</option>
+          <option>Driving</option><option>Plumbing</option><option>Housekeeping</option>
+          <option>Mechanic</option><option>Carpentry</option><option>Security</option>
+        </select>
+        <button class="go" type="submit">Search Jobs</button>
+      </form>
+      <div class="quick" aria-label="Quick searches">
+        <a class="chip" href="jobs.html?q=Driver">Driver</a>
+        <a class="chip" href="jobs.html?q=Welder">Welder</a>
+        <a class="chip" href="jobs.html?q=Electrician">Electrician</a>
+        <a class="chip" href="jobs.html?q=Mason">Mason</a>
+        <a class="chip" href="jobs.html?q=Plumber">Plumber</a>
+        <a class="chip" href="jobs.html?q=Housekeeper">Housekeeper</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="home-main">
+  <section class="home-why panel">
+    <h2>Why SkillLink</h2>
+    <ul class="why-list">
+      <li>Low‑data, phone‑friendly flows</li>
+      <li>Verified, up‑to‑date posts</li>
+      <li>Fast employer response</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot">
+    <div>
+      <h4>For Employers</h4>
+      <p>Post openings, screen applicants, and contact verified workers fast.</p>
+      <a class="btn brand" href="employers.html#post">Create Employer Account</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <p>
+        <a href="about.html#safety">Safety standards</a> ·
+        <a href="about.html#contracts">Contract templates</a> ·
+        <a href="about.html#faq">FAQs</a>
+      </p>
+    </div>
+    <div>
+      <h4>About</h4>
+      <p>We connect skilled workers to decent jobs—fair pay, safe work, transparent terms.</p>
+      <p>Support: <a href="mailto:support@skilllink.ph">support@skilllink.ph</a></p>
+    </div>
+    <small>© <span id="yr"></span> SkillLink • All rights reserved</small>
+  </div>
+</footer>
+
+<!-- Auth Modal (mock) -->
+<div class="modal" id="authModal" aria-hidden="true">
+  <div class="sheet">
+    <h3 id="authTitle">Log In</h3>
+    <input type="email" id="authEmail" placeholder="Email" />
+    <input type="password" id="authPass" placeholder="Password" />
+    <div class="bar">
+      <button class="btn" data-close-auth type="button">Close</button>
+      <button class="btn brand" id="authGo" type="button">Continue</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

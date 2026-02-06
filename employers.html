@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkillLink — For Employers</title>
+  <meta name="description" content="Post jobs and hire skilled workers quickly on SkillLink." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="topbar">
+    <a href="index.html" class="brand" aria-label="SkillLink home">
+      <div class="brand-badge">
+        <img src="SkillLink Logo.png" alt="SkillLink Logo" class="logo-img" />
+      </div>
+      <div class="brand-text">SkillLink</div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="jobs.html">Find Jobs</a>
+      <a href="employers.html" class="active">For Employers</a>
+      <a href="about.html">About</a>
+      <button class="btn" data-open-auth="login" type="button">Log In</button>
+      <button class="btn primary" data-open-auth="register" type="button">Register</button>
+      <a class="btn brand" href="#post">Post a Job</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page pad">
+  <section class="panel">
+    <h2>Hire Skilled Workers Fast</h2>
+    <p>Post verified openings, manage applicants, and connect directly via SMS or email.</p>
+    <a class="btn brand" href="#post">Get Started</a>
+  </section>
+
+  <section id="post" class="panel">
+    <h3>Post a Job (Demo)</h3>
+    <div class="row">
+      <input id="empCompany" placeholder="Company name" />
+      <input id="empContact" placeholder="Contact email or phone" />
+    </div>
+    <div class="row">
+      <input id="empTitle" placeholder="Job title (e.g., SMAW Welder)" />
+      <select id="empTrade">
+        <option>Construction</option><option>Electrical</option><option>Welding</option>
+        <option>Driving</option><option>Plumbing</option><option>Housekeeping</option>
+        <option>Mechanic</option><option>Carpentry</option><option>Security</option>
+      </select>
+    </div>
+    <div class="row">
+      <input id="empLocation" placeholder="Location (City, Province)" />
+      <input id="empPayAmount" type="number" placeholder="Pay amount (e.g., 900)" />
+    </div>
+    <div class="row">
+      <select id="empPayType">
+        <option>Daily</option><option>Monthly</option><option>Per Trip</option>
+      </select>
+      <select id="empExperience">
+        <option>Entry</option><option>Mid</option><option>Senior</option>
+      </select>
+    </div>
+    <div class="row">
+      <select id="empShift">
+        <option>Day</option><option>Night</option><option>Rotational</option><option>Flexible</option>
+      </select>
+      <select id="empFlags">
+        <option value="">No Extra</option>
+        <option value="tools">Tools Provided</option>
+        <option value="lodging">With Lodging</option>
+        <option value="urgent">Urgent</option>
+      </select>
+    </div>
+    <textarea id="empDesc" placeholder="Short description"></textarea>
+    <div class="bar">
+      <button class="btn" id="empClear" type="button">Clear</button>
+      <button class="btn brand" id="empSave" type="button">Save (Local)</button>
+    </div>
+    <p class="muted small">Note: Demo only. Saved to your browser’s local storage; appears on the Jobs page.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot">
+    <small>© <span id="yr"></span> SkillLink • All rights reserved</small>
+  </div>
+</footer>
+
+<!-- Auth Modal (mock) -->
+<div class="modal" id="authModal" aria-hidden="true">
+  <div class="sheet">
+    <h3 id="authTitle">Log In</h3>
+    <input type="email" id="authEmail" placeholder="Email" />
+    <input type="password" id="authPass" placeholder="Password" />
+    <div class="bar">
+      <button class="btn" data-close-auth type="button">Close</button>
+      <button class="btn brand" id="authGo" type="button">Continue</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

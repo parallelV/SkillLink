@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkillLink — Jobs</title>
+  <meta name="description" content="Browse SkillLink’s blue‑collar job listings with filters for trade, pay, experience, and shift." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="topbar">
+    <a href="index.html" class="brand" aria-label="SkillLink home">
+      <div class="brand-badge">
+        <img src="SkillLink Logo.png" alt="SkillLink Logo" class="logo-img" />
+      </div>
+      <div class="brand-text">SkillLink</div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="jobs.html" class="active">Find Jobs</a>
+      <a href="employers.html">For Employers</a>
+      <a href="about.html">About</a>
+      <button class="btn" data-open-auth="login" type="button">Log In</button>
+      <button class="btn primary" data-open-auth="register" type="button">Register</button>
+      <a class="btn brand" href="employers.html#post">Post a Job</a>
+    </nav>
+  </div>
+  <div class="hero slim">
+    <div class="hero-wrap">
+      <form class="searchbox" id="searchbox" onsubmit="return false;">
+        <input type="text" id="q" placeholder="Job title or skill" />
+        <input type="text" id="loc" placeholder="Location" />
+        <select id="cat">
+          <option value="">All Categories</option>
+          <option>Construction</option><option>Electrical</option><option>Welding</option>
+          <option>Driving</option><option>Plumbing</option><option>Housekeeping</option>
+          <option>Mechanic</option><option>Carpentry</option><option>Security</option>
+        </select>
+        <button class="go" type="button" id="go">Search</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" id="jobs">
+  <aside>
+    <div class="filter-group">
+      <div class="sec-title">Trade</div>
+      <label><input type="checkbox" name="trade" value="Construction"> Construction</label>
+      <label><input type="checkbox" name="trade" value="Electrical"> Electrical</label>
+      <label><input type="checkbox" name="trade" value="Welding"> Welding</label>
+      <label><input type="checkbox" name="trade" value="Driving"> Driving</label>
+      <label><input type="checkbox" name="trade" value="Plumbing"> Plumbing</label>
+      <label><input type="checkbox" name="trade" value="Housekeeping"> Housekeeping</label>
+      <label><input type="checkbox" name="trade" value="Mechanic"> Mechanic</label>
+      <label><input type="checkbox" name="trade" value="Carpentry"> Carpentry</label>
+      <label><input type="checkbox" name="trade" value="Security"> Security</label>
+    </div>
+    <div class="filter-group">
+      <div class="sec-title">Pay Type</div>
+      <label><input type="radio" name="paytype" value="" checked> Any</label>
+      <label><input type="radio" name="paytype" value="Daily"> Daily</label>
+      <label><input type="radio" name="paytype" value="Monthly"> Monthly</label>
+      <label><input type="radio" name="paytype" value="Per Trip"> Per Trip</label>
+    </div>
+    <div class="filter-group">
+      <div class="sec-title">Experience</div>
+      <label><input type="radio" name="exp" value="" checked> Any</label>
+      <label><input type="radio" name="exp" value="Entry"> Entry (0–1y)</label>
+      <label><input type="radio" name="exp" value="Mid"> Mid (2–4y)</label>
+      <label><input type="radio" name="exp" value="Senior"> Senior (5y+)</label>
+    </div>
+    <div class="filter-group">
+      <div class="sec-title">Shift</div>
+      <label><input type="checkbox" name="shift" value="Day"> Day</label>
+      <label><input type="checkbox" name="shift" value="Night"> Night</label>
+      <label><input type="checkbox" name="shift" value="Rotational"> Rotational</label>
+      <label><input type="checkbox" name="shift" value="Flexible"> Flexible</label>
+    </div>
+    <div class="filter-group">
+      <div class="sec-title">Expected Pay (₱)</div>
+      <div class="range">
+        <input type="number" id="minPay" placeholder="Min" min="0" />
+        <input type="number" id="maxPay" placeholder="Max" min="0" />
+      </div>
+    </div>
+    <div class="filter-group">
+      <button class="btn brand" id="applyFilters" type="button">Apply Filters</button>
+      <button class="btn" id="resetFilters" type="button">Reset</button>
+    </div>
+    <div class="filter-group">
+      <div class="sec-title">Quick</div>
+      <button class="btn" data-quick="nearme" type="button">Near Me</button>
+      <button class="btn" data-quick="withlodging" type="button">With Lodging</button>
+      <button class="btn" data-quick="withtools" type="button">Tools Provided</button>
+      <button class="btn" data-quick="urgent" type="button">Urgent Hiring</button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="toolbar">
+      <div class="count" id="count">Loading jobs…</div>
+      <div>
+        <label class="muted">Sort:</label>
+        <select id="sortBy">
+          <option value="newest">Newest</option>
+          <option value="highestPay">Highest Pay</option>
+        </select>
+      </div>
+    </div>
+    <div class="cards" id="cards"></div>
+    <div class="empty" id="empty" style="display:none">No results match your filters.</div>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="foot">
+    <div>
+      <h4>For Employers</h4>
+      <p>Post openings, screen applicants, and contact verified workers fast.</p>
+      <a class="btn brand" href="employers.html#post">Create Employer Account</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <p>
+        <a href="about.html#safety">Safety standards</a> ·
+        <a href="about.html#contracts">Contract templates</a> ·
+        <a href="about.html#faq">FAQs</a>
+      </p>
+    </div>
+    <div>
+      <h4>About</h4>
+      <p>We connect skilled workers to decent jobs—fair pay, safe work, transparent terms.</p>
+      <p>Support: <a href="mailto:support@skilllink.ph">support@skilllink.ph</a></p>
+    </div>
+    <small>© <span id="yr"></span> SkillLink • All rights reserved</small>
+  </div>
+</footer>
+
+<!-- Apply Modal -->
+<div class="modal" id="applyModal" aria-hidden="true">
+  <div class="sheet">
+    <h3>Apply for <span id="applyJobTitle"></span></h3>
+    <div class="row">
+      <input type="text" id="appName" placeholder="Full name" />
+      <input type="tel" id="appPhone" placeholder="Phone number" />
+    </div>
+    <div class="row">
+      <input type="email" id="appEmail" placeholder="Email (optional)" />
+      <select id="appExp">
+        <option value="">Experience</option>
+        <option>Entry</option>
+        <option>Mid</option>
+        <option>Senior</option>
+      </select>
+    </div>
+    <textarea id="appMsg" placeholder="Short note (availability, tools, certifications)"></textarea>
+    <div class="bar">
+      <button class="btn" data-close-apply type="button">Cancel</button>
+      <button class="btn brand" id="submitApply" type="button">Submit Application</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

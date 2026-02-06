@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SkillLink — About</title>
+  <meta name="description" content="About SkillLink: mission, safety, contract templates, and FAQs for blue‑collar workers and employers." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="topbar">
+    <a href="index.html" class="brand" aria-label="SkillLink home">
+      <div class="brand-badge">
+        <img src="SkillLink Logo.png" alt="SkillLink Logo" class="logo-img" />
+      </div>
+      <div class="brand-text">SkillLink</div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="jobs.html">Find Jobs</a>
+      <a href="employers.html">For Employers</a>
+      <a href="about.html" class="active">About</a>
+      <button class="btn" data-open-auth="login" type="button">Log In</button>
+      <button class="btn primary" data-open-auth="register" type="button">Register</button>
+    </nav>
+  </div>
+</header>
+
+<main class="page pad">
+  <section class="panel">
+    <h2>About SkillLink</h2>
+    <p>Placeholder: mission, verification policy, anti‑scam measures, and worker safety commitments.</p>
+  </section>
+
+  <section class="panel" id="safety">
+    <h3>Safety Standards</h3>
+    <p>Placeholder: PPE requirements, site safety, reporting unsafe practices.</p>
+  </section>
+
+  <section class="panel" id="contracts">
+    <h3>Contract Templates</h3>
+    <p>Placeholder: short-term contract, project-based agreement, daily rate contract.</p>
+  </section>
+
+  <section class="panel" id="faq">
+    <h3>FAQs</h3>
+    <details><summary>How do I apply?</summary><p>Use the Apply button on any job. You’ll receive a confirmation and the employer may contact you via SMS or email.</p></details>
+    <details><summary>How are posts verified?</summary><p>Placeholder: verification steps, IDs, and checks.</p></details>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot">
+    <small>© <span id="yr"></span> SkillLink • All rights reserved</small>
+  </div>
+</footer>
+
+<!-- Auth Modal (mock) -->
+<div class="modal" id="authModal" aria-hidden="true">
+  <div class="sheet">
+    <h3 id="authTitle">Log In</h3>
+    <input type="email" id="authEmail" placeholder="Email" />
+    <input type="password" id="authPass" placeholder="Password" />
+    <div class="bar">
+      <button class="btn" data-close-auth type="button">Close</button>
+      <button class="btn brand" id="authGo" type="button">Continue</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
